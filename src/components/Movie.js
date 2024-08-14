@@ -1,4 +1,3 @@
-import "./Movie.css"
 import allMovies from "../data"
 import AllDeleteButton from "./AllDeleteButton";
 import ReloadMovieButton from "./ReloadMovieButton";
@@ -16,26 +15,25 @@ const [movie, setMovie] = useState(allMovies)
     }
   return (
     <section>
-       <div className="all-movies">
+       <div className="w-[90%] flex flex-row justify-center flex-wrap my-10 mx-auto">
         {movie.map((oneMovie) => {
             const {id, image, title, age, tags, description, category} = oneMovie
-            return <div className="one-movie" key={id}>
-                <img src={image} alt="" />
-                <h2>{title}</h2>
-                <p>{age}</p>
-                <p>{tags}</p>
-                <p>{description}</p>
-                <p>{category}</p>
+            return <div className="w-[300px] text-white my-2 mx-1 bg-[#141414] transition-all duration-500 hover:scale-105" key={id}>
+                <img src={image} alt="" className="h-[170px]"/>
+                <h2 className="pl-2 my-2">{title}</h2>
+                <p className="pl-2 my-2">{age}</p>
+                <p className="pl-2 my-2">{tags}</p>
+                <p className="pl-2 my-2">{description}</p>
+                <p className="pl-2 my-2">{category}</p>
                 <MovieDeleteButton deleteMovie={() => deleteMovie(id)}/>
             </div>
 })}
     </div>
-    <div className="button-box">
+    <div className="flex flex-row justify-center">
     <AllDeleteButton deleteAllMovies = {() => setMovie([])} />
     <ReloadMovieButton reloadMovies = {() => setMovie(allMovies)}/>  
     </div>
-    </section>
-   
+    </section> 
   )
 }
 

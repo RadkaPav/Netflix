@@ -1,8 +1,6 @@
-import "./AllDeleteButton.css"
-
 const AllDeleteButton = (props) => {
   return (
-    <button className="main-delete-button" onClick={props.deleteAllMovies}>Vymaž všechny filmy</button>
+    <button className="text-white text-lg bg-[#e50914] py-1 px-3 cursor-pointer" onClick={props.deleteAllMovies}>Vymaž všechny filmy</button>
   )
 }
 

@@ -1,8 +1,6 @@
-import "./MovieDeleteButton.css"
-
 const MovieDeleteButton = (props) => {
   return (
-    <button className="movie-delete-button" onClick={props.deleteMovie}>Vymaž film</button>
+    <button className="text-white bg-[#e50914] p-1 cursor-pointer w-[300px]" onClick={props.deleteMovie}>Vymaž film</button>
   )
 }
 
